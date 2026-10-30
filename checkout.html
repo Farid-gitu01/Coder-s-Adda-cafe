@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Complete your Coder's Cup order with a premium and simple cafe checkout flow."
+    />
+    <title>Coder's Cup | Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/checkout.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="Coder's Cup home">
+          <img class="brand-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" />
+          <span class="brand-text">
+            <strong>Coder's Cup</strong>
+            <small>Premium Cafe</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-ghost">Login</a>
+          <a href="booking.html" class="btn btn-primary">Book a Table</a>
+          <a href="cart.html" class="cart-button" aria-label="Shopping cart">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-count" id="header-cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="checkout-hero">
+        <div class="checkout-overlay"></div>
+        <div class="container checkout-hero-inner">
+          <p class="eyebrow accent">Checkout</p>
+          <h1>Complete Your Order.</h1>
+          <p>Fast, simple, and ready for your next cafe break.</p>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="menu.html">Menu</a>
+            <span>/</span>
+            <a href="cart.html">Cart</a>
+            <span>/</span>
+            <span>Checkout</span>
+          </nav>
+        </div>
+      </section>
+
+      <section class="checkout-page section-spacing">
+        <div class="container checkout-grid">
+          <form id="checkout-form" class="checkout-form" novalidate>
+            <div class="form-card">
+              <h2>Customer Information</h2>
+              <div class="field-grid">
+                <div class="input-group">
+                  <label for="customer-name">Full Name</label>
+                  <input type="text" id="customer-name" name="customer-name" placeholder="Enter your full name" />
+                  <small class="error-message" data-error-for="customer-name"></small>
+                </div>
+
+                <div class="input-group">
+                  <label for="mobile-number">Mobile Number</label>
+                  <input type="tel" id="mobile-number" name="mobile-number" placeholder="e.g. 9876543210" />
+                  <small class="error-message" data-error-for="mobile-number"></small>
+                </div>
+
+                <div class="input-group full-width">
+                  <label for="email-address">Email Address</label>
+                  <input type="email" id="email-address" name="email-address" placeholder="you@example.com" />
+                  <small class="error-message" data-error-for="email-address"></small>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-card">
+              <h2>Order Type</h2>
+              <div class="radio-group">
+                <label class="option-box">
+                  <input type="radio" name="order-type" value="Dine In" checked />
+                  <span>Dine In</span>
+                </label>
+                <label class="option-box">
+                  <input type="radio" name="order-type" value="Takeaway" />
+                  <span>Takeaway</span>
+                </label>
+              </div>
+
+              <div id="dinein-fields" class="extra-fields">
+                <div class="input-group">
+                  <label for="table-number">Table Number / Reference</label>
+                  <input type="text" id="table-number" name="table-number" placeholder="e.g. Table 7 or For the team" />
+                </div>
+              </div>
+
+              <div id="takeaway-fields" class="extra-fields hidden">
+                <div class="input-group">
+                  <label for="pickup-time">Estimated Pickup Time</label>
+                  <input type="time" id="pickup-time" name="pickup-time" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-card">
+              <h2>Special Instructions</h2>
+              <div class="input-group">
+                <textarea id="order-notes" rows="4" placeholder="Less spicy, extra cheese, no onion..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-card">
+              <h2>Payment Method</h2>
+              <div class="radio-group payment-group">
+                <label class="option-box">
+                  <input type="radio" name="payment-method" value="Cash" checked />
+                  <span>Cash</span>
+                </label>
+                <label class="option-box">
+                  <input type="radio" name="payment-method" value="UPI" />
+                  <span>UPI</span>
+                </label>
+                <label class="option-box">
+                  <input type="radio" name="payment-method" value="Card" />
+                  <span>Card</span>
+                </label>
+              </div>
+
+              <div id="cash-fields" class="payment-box">
+                <p>Cash payment will be collected at the counter or during pickup.</p>
+              </div>
+
+              <div id="upi-fields" class="payment-box hidden">
+                <div class="input-group">
+                  <label for="upi-id">UPI ID</label>
+                  <input type="text" id="upi-id" placeholder="yourname@upi" />
+                </div>
+              </div>
+
+              <div id="card-fields" class="payment-box hidden">
+                <div class="input-group">
+                  <label for="card-name">Name on Card</label>
+                  <input type="text" id="card-name" placeholder="Name on card" />
+                </div>
+                <div class="input-group">
+                  <label for="card-last4">Last 4 Digits</label>
+                  <input type="text" id="card-last4" maxlength="4" placeholder="1234" />
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <aside class="checkout-summary">
+            <h3>Final Order Summary</h3>
+
+            <div id="checkout-items" class="checkout-items"></div>
+
+            <div class="summary-list">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="checkout-subtotal">₹0</strong>
+              </div>
+              <div class="summary-row">
+                <span>GST</span>
+                <strong id="checkout-tax">₹0</strong>
+              </div>
+              <div class="summary-row">
+                <span>Delivery</span>
+                <strong id="checkout-delivery">₹0</strong>
+              </div>
+              <div class="summary-row">
+                <span>Discount</span>
+                <strong id="checkout-discount">-₹0</strong>
+              </div>
+              <div class="summary-row total-row">
+                <span>Final Payable</span>
+                <strong id="checkout-total">₹0</strong>
+              </div>
+            </div>
+
+            <button type="submit" form="checkout-form" class="btn btn-primary btn-full" id="place-order-btn">Place Order</button>
+            <a href="menu.html" class="btn btn-secondary btn-full">Continue Shopping</a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-overlay hidden" id="confirmation-modal" aria-modal="true" role="dialog">
+      <div class="confirmation-modal">
+        <img class="confirmation-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" />
+        <div class="success-badge">✓</div>
+        <h3>Order Placed Successfully!</h3>
+        <p>
+          Your order has been placed successfully! Thank you for choosing Coder's Cup.
+        </p>
+        <div class="confirmation-details">
+          <div><span>Order ID</span><strong id="confirm-order-id"></strong></div>
+          <div><span>Customer</span><strong id="confirm-customer-name"></strong></div>
+          <div><span>Order Type</span><strong id="confirm-order-type"></strong></div>
+          <div><span>Payment</span><strong id="confirm-payment"></strong></div>
+          <div><span>Total</span><strong id="confirm-total"></strong></div>
+          <div><span>Time</span><strong id="confirm-time"></strong></div>
+        </div>
+        <p class="demo-note">This is a frontend demo and no real order has been sent to the cafe.</p>
+        <div class="modal-actions">
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+          <a href="menu.html" class="btn btn-secondary">Explore More Food</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand footer-brand-link" aria-label="Coder's Cup home">
+            <img class="brand-logo footer-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" />
+            <span class="brand-text">
+              <strong>Coder's Cup</strong>
+              <small>Premium Cafe</small>
+            </span>
+          </a>
+          <p>
+            A premium cafe experience built for coffee lovers, creators, and anyone chasing good
+            energy and better moments.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Menu Categories</h3>
+          <ul>
+            <li><a href="menu.html">Coffee</a></li>
+            <li><a href="menu.html">Tea</a></li>
+            <li><a href="menu.html">Desserts</a></li>
+            <li><a href="menu.html">Breakfast</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact Info</h3>
+          <ul>
+            <li>12 Coffee Lane</li>
+            <li>+91 98765 43210</li>
+            <li>hello@coderscup.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© <span id="year"></span> Coder's Cup. All rights reserved.</p>
+          <div class="socials footer-socials">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">X</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/checkout.js"></script>
+  </body>
+</html>

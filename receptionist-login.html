@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Receptionist sign in for Coder's Cup cafe operations." /><title>Coder's Cup | Receptionist Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="css/receptionist.css" />
+  </head>
+  <body>
+    <header class="site-header"><div class="container nav-wrap"><a href="index.html" class="brand" aria-label="Coder's Cup home"><img class="brand-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" /><span class="brand-text"><strong>Coder's Cup</strong><small>Premium Cafe</small></span></a><a href="index.html" class="btn btn-secondary">Back to Website</a></div></header>
+    <main class="reception-login-main"><section class="reception-login-card"><img class="auth-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" /><p class="eyebrow accent">Team Portal</p><h1>Receptionist Login</h1><p class="login-subtitle">Welcome back! Manage your cafe operations.</p>
+      <form id="receptionist-login-form" novalidate>
+        <div class="input-group"><label for="employee-id">Employee ID</label><input id="employee-id" name="employee-id" autocomplete="username" placeholder="EMP001" /><small class="error-message" data-error-for="employee-id"></small></div>
+        <div class="input-group"><label for="receptionist-email">Email Address</label><input id="receptionist-email" name="email" type="email" autocomplete="email" placeholder="name@coderscup.com" /><small class="error-message" data-error-for="receptionist-email"></small></div>
+        <div class="input-group"><label for="receptionist-password">Password</label><div class="password-wrap"><input id="receptionist-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" /><button type="button" class="password-toggle" id="show-receptionist-password">Show</button></div><small class="error-message" data-error-for="receptionist-password"></small></div>
+        <label class="remember-row"><input id="remember-receptionist" type="checkbox" /><span>Remember Me</span></label>
+        <p id="receptionist-login-feedback" class="login-feedback" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn btn-primary btn-full">Sign In to Operations</button>
+      </form>
+      <div class="demo-credentials"><strong>Demo credentials</strong><span>EMP001 · receptionist@coderscup.com · Demo1234</span></div>
+      <p class="security-warning">Frontend demonstration only. Do not use real credentials; localStorage role checks are not secure authorization.</p>
+    </section></main>
+    <footer class="site-footer"><div class="footer-bottom"><div class="container footer-bottom-inner"><p>© <span id="year"></span> Coder's Cup. Internal demo portal.</p><a href="index.html">Home</a></div></div></footer>
+    <script src="script.js"></script><script src="js/receptionist-auth.js"></script>
+  </body>
+</html>

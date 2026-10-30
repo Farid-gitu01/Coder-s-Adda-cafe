@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Coder's Cup receptionist operations dashboard." /><title>Coder's Cup | Reception Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="css/receptionist.css" />
+  </head>
+  <body class="reception-body">
+    <div class="reception-shell">
+      <aside class="reception-sidebar" id="reception-sidebar">
+        <a href="index.html" class="reception-brand"><img class="brand-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" /><div><strong>Coder's Cup</strong><small>Operations</small></div></a>
+        <div class="staff-profile"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=140&q=80" alt="Receptionist profile" /><div><strong id="staff-name">Receptionist</strong><small id="staff-employee-id">EMP001 · Reception</small></div></div>
+        <nav class="reception-nav" aria-label="Operations navigation">
+          <button type="button" class="reception-nav-link active" data-section="overview">▦ <span>Dashboard</span></button>
+          <button type="button" class="reception-nav-link" data-section="orders">▤ <span>Orders Management</span></button>
+          <button type="button" class="reception-nav-link" data-section="bookings">▣ <span>Table Bookings</span></button>
+          <button type="button" class="reception-nav-link" data-section="tables">▧ <span>Table Management</span></button>
+          <button type="button" class="reception-nav-link" data-section="customers">♙ <span>Customer Details</span></button>
+        </nav>
+        <button type="button" class="reception-logout" data-reception-logout>⇥ <span>Logout</span></button>
+        <p class="sidebar-note">Receptionist access · Demo environment</p>
+      </aside>
+
+      <main class="reception-main">
+        <header class="reception-topbar"><button id="reception-menu-toggle" class="mobile-menu-toggle" type="button" aria-expanded="false" aria-label="Toggle operations menu">☰</button><div class="page-title"><span>Coder's Cup / Operations</span><h1 id="active-page-title">Dashboard Overview</h1></div><div class="topbar-actions"><div class="live-clock"><span>●</span><time id="current-datetime"></time></div><button type="button" class="notification-button" aria-label="Notifications" title="Demo notification center">♧<span id="notification-count">0</span></button><div class="topbar-profile"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=140&q=80" alt="" /><div><strong id="topbar-staff-name">Receptionist</strong><small>Receptionist</small></div></div><button type="button" class="topbar-logout" data-reception-logout>Logout</button></div></header>
+        <div class="reception-content">
+          <div class="reception-demo-warning">Single-browser frontend demo. Operations data is stored locally and does not sync to other devices.</div>
+
+          <section id="section-overview" class="reception-section active">
+            <div class="welcome-strip"><div><p class="eyebrow accent">Operations at a glance</p><h2>Good service starts here.</h2><p>Monitor today's orders, reservations, and seating.</p></div><span class="welcome-cup">☕</span></div>
+            <div id="stats-grid" class="reception-stats"></div>
+            <div class="quick-actions"><button type="button" data-goto-section="orders">View All Orders <span>→</span></button><button type="button" data-goto-section="bookings">View All Bookings <span>→</span></button><button type="button" data-goto-section="tables">Manage Tables <span>→</span></button><button type="button" data-goto-section="customers">View Customers <span>→</span></button></div>
+            <div class="overview-columns"><section class="management-panel"><div class="panel-title"><div><p class="eyebrow accent">Latest activity</p><h2>Recent Orders</h2></div><button type="button" data-goto-section="orders">See all</button></div><div id="recent-orders-table" class="table-scroll"></div></section><section class="management-panel"><div class="panel-title"><div><p class="eyebrow accent">Coming up</p><h2>Upcoming Bookings</h2></div><button type="button" data-goto-section="bookings">See all</button></div><div id="upcoming-bookings-table" class="table-scroll"></div></section></div>
+          </section>
+
+          <section id="section-orders" class="reception-section"><div class="section-heading-row"><div><p class="eyebrow accent">Kitchen workflow</p><h2>Orders Management</h2><p>Review incoming customer orders and update their progress.</p></div></div><div id="order-statistics" class="order-statistics"></div><div class="management-panel"><div class="filter-toolbar order-filter-toolbar"><input id="order-search" type="search" placeholder="Search order ID or customer" aria-label="Search orders" /><select id="order-status-filter" aria-label="Filter by order status"><option value="">All statuses</option><option>Pending</option><option>Accepted</option><option>Preparing</option><option>Ready</option><option>Completed</option><option>Cancelled</option></select><select id="order-type-filter" aria-label="Filter by order type"><option value="">All order types</option><option>Dine In</option><option>Takeaway</option></select><select id="order-payment-filter" aria-label="Filter by payment status"><option value="">All payment statuses</option><option>Pending</option><option>Paid</option><option>Failed</option><option>Refunded</option></select><input id="order-date-filter" type="date" aria-label="Filter orders by date" /><select id="order-sort-filter" aria-label="Sort orders"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></div><div id="orders-management-table" class="table-scroll"></div></div></section>
+
+          <section id="section-bookings" class="reception-section"><div class="section-heading-row"><div><p class="eyebrow accent">Reservation desk</p><h2>Table Bookings</h2><p>Confirm requests and keep the floor plan conflict-free.</p></div></div><div class="management-panel"><div class="filter-toolbar"><input id="booking-search" type="search" placeholder="Search booking ID or customer" aria-label="Search bookings" /><input id="booking-date-filter" type="date" aria-label="Filter bookings by date" /><select id="booking-status-filter" aria-label="Filter by booking status"><option value="">All statuses</option><option value="Pending Confirmation">Pending</option><option>Confirmed</option><option>Cancelled</option></select><select id="booking-table-filter" aria-label="Filter by table"><option value="">All tables</option></select></div><div id="bookings-management-table" class="table-scroll"></div></div></section>
+
+          <section id="section-tables" class="reception-section"><div class="section-heading-row"><div><p class="eyebrow accent">Front of house</p><h2>Table Management</h2><p>Manage seating status while respecting confirmed reservations.</p></div><div class="table-status-legend"><span><i class="dot available"></i>Available</span><span><i class="dot reserved"></i>Reserved</span><span><i class="dot occupied"></i>Occupied</span><span><i class="dot cleaning"></i>Cleaning</span></div></div><div id="table-management-grid" class="managed-tables-grid"></div></section>
+
+          <section id="section-customers" class="reception-section"><div class="section-heading-row"><div><p class="eyebrow accent">Guest directory</p><h2>Customer Details</h2><p>Customer information is read-only for receptionist accounts.</p></div></div><div class="management-panel"><div class="filter-toolbar"><input id="customer-search" type="search" placeholder="Search name, email or mobile" aria-label="Search customers" /><select id="customer-filter"><option value="">All customers</option><option value="orders">With orders</option><option value="bookings">With bookings</option></select></div><div id="customers-management-table" class="table-scroll"></div></div></section>
+        </div>
+      </main>
+    </div>
+    <div id="reception-modal" class="reception-modal hidden" role="dialog" aria-modal="true" aria-labelledby="reception-modal-title"><div class="reception-modal-card"><button id="reception-modal-close" class="modal-close" type="button" aria-label="Close details">×</button><p class="eyebrow accent">Record details</p><h2 id="reception-modal-title">Details</h2><div id="reception-modal-content" class="modal-record-content"></div><div class="modal-footer-actions"><button type="button" class="btn btn-secondary hidden" id="print-order-receipt">Print Receipt</button><button type="button" class="btn btn-primary" id="reception-modal-done">Close</button></div></div></div>
+    <div id="toast-region" class="toast-region" aria-live="polite"></div>
+    <script src="script.js"></script><script src="js/receptionist-dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Reserve your perfect spot at Coder's Cup with our premium cafe table booking experience."
+    />
+    <title>Coder's Cup | Book a Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/booking.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="Coder's Cup home">
+          <img class="brand-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" />
+          <span class="brand-text">
+            <strong>Coder's Cup</strong>
+            <small>Premium Cafe</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-ghost">Login</a>
+          <a href="booking.html" class="btn btn-primary">Book a Table</a>
+          <a href="cart.html" class="cart-button" aria-label="Shopping cart">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-count" id="header-cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="booking-hero">
+        <div class="booking-overlay"></div>
+        <div class="container booking-hero-inner">
+          <p class="eyebrow accent">Book a Table</p>
+          <h1>Reserve Your Perfect Spot.</h1>
+          <p>
+            Your favourite food, your favourite people, and your perfect table are waiting for you.
+          </p>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Book a Table</span>
+          </nav>
+
+          <div class="hero-action-row">
+            <a href="#booking-form" class="btn btn-primary">Book Now</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking-info section-spacing">
+        <div class="container">
+          <div class="section-heading center">
+            <p class="eyebrow accent">Cafe Seating</p>
+            <h2>Comfortable spaces for every vibe.</h2>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-card highlight-card">
+              <span class="info-label">Total Tables</span>
+              <strong>10</strong>
+              <p>Curated seating options for intimate meetups and group gatherings.</p>
+            </div>
+
+            <div class="info-card">
+              <span class="info-label">Seating Capacity</span>
+              <strong>36 Guests</strong>
+              <p>Flexible space designed to make every reservation pleasant and relaxed.</p>
+            </div>
+
+            <div class="info-card">
+              <span class="info-label">Comfortable Seating</span>
+              <strong>Ergonomic &amp; Cozy</strong>
+              <p>Thoughtfully spaced tables for conversation, work sessions, and slow meals.</p>
+            </div>
+
+            <div class="info-card">
+              <span class="info-label">Dine-In Experience</span>
+              <strong>Premium Ambience</strong>
+              <p>From quick coffee catch-ups to leisurely brunches, every table feels special.</p>
+            </div>
+          </div>
+
+          <div class="table-breakdown">
+            <div class="breakdown-item">
+              <span>Small Tables</span>
+              <strong>4 tables</strong>
+              <small>2-seater</small>
+            </div>
+            <div class="breakdown-item">
+              <span>Medium Tables</span>
+              <strong>4 tables</strong>
+              <small>4-seater</small>
+            </div>
+            <div class="breakdown-item">
+              <span>Large Tables</span>
+              <strong>2 tables</strong>
+              <small>6-seater</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking-section section-spacing">
+        <div class="container booking-layout">
+          <div class="booking-card table-card-panel">
+            <div class="card-head">
+              <div>
+                <p class="eyebrow accent">Select Your Table</p>
+                <h2>Table Layout</h2>
+              </div>
+              <span class="help-badge">1 table per reservation</span>
+            </div>
+
+            <div class="table-legend" aria-label="Table status legend">
+              <div class="legend-item"><span class="legend-dot available"></span> Available</div>
+              <div class="legend-item"><span class="legend-dot reserved"></span> Reserved</div>
+              <div class="legend-item"><span class="legend-dot selected"></span> Selected</div>
+            </div>
+
+            <div id="table-layout" class="table-layout" aria-live="polite"></div>
+
+            <div id="selected-table-info" class="selected-table-box">
+              <strong>No table selected yet.</strong>
+              <span>Please choose a table to continue with your booking.</span>
+            </div>
+          </div>
+
+          <div class="booking-card form-card">
+            <div class="card-head">
+              <div>
+                <p class="eyebrow accent">Reservation Details</p>
+                <h2>Book Your Visit</h2>
+              </div>
+            </div>
+
+            <form id="booking-form" novalidate>
+              <div class="field-grid">
+                <div class="input-group">
+                  <label for="customer-name">Full Name</label>
+                  <input type="text" id="customer-name" name="customer-name" placeholder="Enter your full name" />
+                  <small class="error-message" data-error-for="customer-name"></small>
+                </div>
+
+                <div class="input-group">
+                  <label for="mobile-number">Mobile Number</label>
+                  <input type="tel" id="mobile-number" name="mobile-number" placeholder="Enter Indian number" />
+                  <small class="error-message" data-error-for="mobile-number"></small>
+                </div>
+
+                <div class="input-group full-width">
+                  <label for="email-address">Email Address</label>
+                  <input type="email" id="email-address" name="email-address" placeholder="you@example.com" />
+                  <small class="error-message" data-error-for="email-address"></small>
+                </div>
+
+                <div class="input-group">
+                  <label for="booking-date">Booking Date</label>
+                  <input type="date" id="booking-date" name="booking-date" />
+                  <small class="error-message" data-error-for="booking-date"></small>
+                </div>
+
+                <div class="input-group">
+                  <label for="booking-time">Booking Time</label>
+                  <select id="booking-time" name="booking-time">
+                    <option value="">Select a time</option>
+                  </select>
+                  <small class="error-message" data-error-for="booking-time"></small>
+                </div>
+
+                <div class="input-group">
+                  <label for="guest-count">Number of Guests</label>
+                  <select id="guest-count" name="guest-count">
+                    <option value="">Select guests</option>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6 Guests</option>
+                  </select>
+                  <small class="error-message" data-error-for="guest-count"></small>
+                </div>
+
+                <div class="input-group">
+                  <label for="preferred-table">Preferred Table</label>
+                  <input type="text" id="preferred-table" name="preferred-table" readonly placeholder="Choose a table above" />
+                  <small class="error-message" data-error-for="preferred-table"></small>
+                </div>
+
+                <div class="input-group full-width">
+                  <label for="special-requests">Special Requests</label>
+                  <textarea id="special-requests" name="special-requests" rows="3" placeholder="Optional: window seating, birthday setup, anniversary note..."></textarea>
+                </div>
+              </div>
+
+              <div class="summary-box" id="booking-summary">
+                <h3>Booking Summary</h3>
+                <div class="summary-list">
+                  <div><span>Customer</span><strong id="summary-name">-</strong></div>
+                  <div><span>Date</span><strong id="summary-date">-</strong></div>
+                  <div><span>Time</span><strong id="summary-time">-</strong></div>
+                  <div><span>Guests</span><strong id="summary-guests">-</strong></div>
+                  <div><span>Table</span><strong id="summary-table">-</strong></div>
+                  <div><span>Capacity</span><strong id="summary-capacity">-</strong></div>
+                  <div class="full-width"><span>Requests</span><strong id="summary-requests">No special requests</strong></div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">Confirm Reservation</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="booking-confirmation" class="modal-overlay hidden" aria-modal="true" role="dialog">
+      <div class="confirmation-modal booking-confirmation-box">
+        <div class="success-badge">✓</div>
+        <h3>Reservation Request Submitted!</h3>
+        <p>
+          Your table reservation request has been submitted successfully. We look forward to welcoming you to Coder's Cup.
+        </p>
+
+        <div class="confirmation-details">
+          <div><span>Booking ID</span><strong id="confirm-booking-id"></strong></div>
+          <div><span>Customer</span><strong id="confirm-customer-name"></strong></div>
+          <div><span>Table</span><strong id="confirm-table-number"></strong></div>
+          <div><span>Date</span><strong id="confirm-booking-date"></strong></div>
+          <div><span>Time</span><strong id="confirm-booking-time"></strong></div>
+          <div><span>Guests</span><strong id="confirm-guest-count"></strong></div>
+          <div><span>Status</span><strong>Pending Confirmation</strong></div>
+        </div>
+
+        <p class="demo-note">
+          This is a frontend-only demonstration. The reservation has not been sent to the actual cafe.
+        </p>
+
+        <div class="modal-actions">
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+          <button type="button" id="close-confirmation" class="btn btn-secondary">View Booking Details</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand footer-brand-link" aria-label="Coder's Cup home">
+            <img class="brand-logo footer-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" />
+            <span class="brand-text">
+              <strong>Coder's Cup</strong>
+              <small>Premium Cafe</small>
+            </span>
+          </a>
+          <p>
+            A premium cafe experience built for coffee lovers, creators, and anyone chasing good energy and better moments.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Menu Categories</h3>
+          <ul>
+            <li><a href="menu.html">Coffee</a></li>
+            <li><a href="menu.html">Tea</a></li>
+            <li><a href="menu.html">Desserts</a></li>
+            <li><a href="menu.html">Breakfast</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact Info</h3>
+          <ul>
+            <li>12 Coffee Lane</li>
+            <li>+91 98765 43210</li>
+            <li>hello@coderscup.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© <span id="year"></span> Coder's Cup. All rights reserved.</p>
+          <div class="socials footer-socials">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">X</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="js/booking.js"></script>
+  </body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Coder's Cup is a premium cafe experience serving fresh coffee, comfort food, and a creative atmosphere for dreamers and developers."
+    />
+    <title>Coder's Cup | Good Food • Great Vibes • Better Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#home" class="brand" aria-label="Coder's Cup home">
+          <img class="brand-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" />
+          <span class="brand-text">
+            <strong>Coder's Cup</strong>
+            <small>Premium Cafe</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-ghost">Login</a>
+          <a href="booking.html" class="btn btn-primary">Book a Table</a>
+          <a href="cart.html" class="cart-button" aria-label="Shopping cart">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-count">3</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">Welcome to Coder's Cup</p>
+            <h1>More Than Just a Cafe.</h1>
+            <p class="hero-text">
+              Great coffee, delicious food, and a cozy space for coders, dreamers,
+              and everyone in between.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#menu" class="btn btn-primary">Explore Menu</a>
+              <a href="booking.html" class="btn btn-secondary">Book a Table</a>
+            </div>
+
+            <div class="hero-stats" aria-label="Cafe highlights">
+              <div>
+                <strong>4.9/5</strong>
+                <span>Customer rating</span>
+              </div>
+              <div>
+                <strong>12k+</strong>
+                <span>Cup served</span>
+              </div>
+              <div>
+                <strong>7 AM</strong>
+                <span>Open daily</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Coffee and cafe favourites">
+            <div class="hero-photo hero-photo-main"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Freshly brewed coffee" /></div>
+            <div class="hero-photo hero-photo-cappuccino"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Cappuccino with latte art" /></div>
+            <div class="hero-photo hero-photo-burger"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Gourmet cafe burger" /></div>
+            <div class="hero-photo hero-photo-pizza"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Freshly baked pizza" /></div>
+            <div class="hero-photo hero-photo-sandwich"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" alt="Grilled cafe sandwich" /></div>
+            <div class="hero-photo hero-photo-dessert"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80" alt="Chocolate cafe dessert" /></div>
+            <div class="floating-card card-top"><span class="card-label">Signature Brew</span><strong>Mocha Gold</strong><small>Fresh roasted · House favorite</small></div>
+            <div class="floating-card card-bottom"><div class="rating"><span>★★★★★</span><strong>Made for good moments</strong></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features section-spacing" aria-label="Why people love us">
+        <div class="container">
+          <div class="section-heading center">
+            <p class="eyebrow accent">Why Choose Us</p>
+            <h2>Your neighborhood cafe, elevated.</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon">☕</div>
+              <h3>Fresh &amp; Delicious</h3>
+              <p>Every cup and plate is prepared with quality ingredients and a chef-crafted touch.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">🪑</div>
+              <h3>Cozy Atmosphere</h3>
+              <p>Warm lighting, relaxing corners, and creative energy for all-day conversations.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">😊</div>
+              <h3>Friendly Service</h3>
+              <p>Our team brings the kind of welcome that turns a quick stop into a habit.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">💡</div>
+              <h3>Coder's Community</h3>
+              <p>A place for makers, students, and creators to connect, work, and recharge.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu section-spacing" id="menu">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow accent">Explore Our Menu</p>
+            <h2>Crafted flavors for every craving.</h2>
+          </div>
+
+          <div class="home-menu-controls">
+            <div id="home-menu-categories" class="home-menu-categories" aria-label="Filter menu by category"></div>
+            <label class="home-menu-search"><span>Search menu</span><input id="home-menu-search" type="search" placeholder="Coffee, sandwich, dessert..." /></label>
+          </div>
+          <div class="home-menu-heading"><h3 id="home-menu-title">All Menu Items</h3><span id="home-menu-count" aria-live="polite"></span></div>
+          <div id="home-menu-grid" class="home-menu-grid" aria-live="polite"></div>
+          <a href="menu.html" class="btn btn-secondary home-full-menu">Explore the full menu</a>
+        </div>
+      </section>
+
+      <section class="benefits section-spacing" aria-label="Why choose our cafe">
+        <div class="benefits-overlay"></div>
+        <div class="container benefits-inner">
+          <div class="section-heading white">
+            <p class="eyebrow accent">Why Choose Us</p>
+            <h2>Comfort, flavor, and hospitality in every visit.</h2>
+          </div>
+
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <span class="benefit-icon">🌿</span>
+              <h3>Fresh Ingredients</h3>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">💸</span>
+              <h3>Affordable Prices</h3>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">🛋️</span>
+              <h3>Comfortable Seating</h3>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">⚡</span>
+              <h3>Fast &amp; Friendly Service</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section-spacing" id="about">
+        <div class="container about-grid">
+          <div class="about-copy">
+            <p class="eyebrow accent">About Coder's Cup</p>
+            <h2>A Place Where Coffee Meets Creativity.</h2>
+            <p>
+              At Coder's Cup, we blend premium coffee culture with a warm, welcoming space for
+              work, conversation, and inspiration. From quiet mornings to lively evenings, our cafe
+              is designed to keep your creative energy flowing.
+            </p>
+
+            <img
+              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80"
+              alt="Cafe interior and cozy seating"
+              class="about-photo"
+            />
+
+            <div class="mission-vision">
+              <div>
+                <h3>Our Mission</h3>
+                <p>To serve exceptional flavors while building a community where creativity thrives.</p>
+              </div>
+              <div>
+                <h3>Our Vision</h3>
+                <p>To become the favorite creative cafe for dreamers, workers, and food lovers alike.</p>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn-primary">Learn More</a>
+          </div>
+
+          <div class="about-visual">
+            <div class="about-card main-card">
+              <img
+                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80"
+                alt="Coffee bar and cafe details"
+              />
+            </div>
+            <div class="about-card mini-card">
+              <strong>Since 2019</strong>
+              <span>Serving fresh brews and good vibes.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials section-spacing">
+        <div class="container">
+          <div class="section-heading center">
+            <p class="eyebrow accent">Testimonials</p>
+            <h2>Guests who keep coming back.</h2>
+          </div>
+
+          <div class="testimonial-slider" id="testimonial-slider" aria-label="Customer testimonials">
+          <div class="testimonial-grid" id="testimonial-track">
+            <article class="testimonial-card">
+              <div class="review-header">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Aisha Patel" />
+                <div>
+                  <h3>Aisha Patel</h3>
+                  <span>★★★★★</span>
+                </div>
+              </div>
+              <p>
+                “The ambience is warm, the coffee is perfect, and the space is ideal for getting
+                work done with a little inspiration.”
+              </p>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="review-header">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Rohit Sharma" />
+                <div>
+                  <h3>Rohit Sharma</h3>
+                  <span>★★★★★</span>
+                </div>
+              </div>
+              <p>
+                “From the waffles to the espresso, everything felt premium and thoughtful. It feels
+                like a third place between home and work.”
+              </p>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="review-header">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=200&q=80" alt="Meera Singh" />
+                <div>
+                  <h3>Meera Singh</h3>
+                  <span>★★★★★</span>
+                </div>
+              </div>
+              <p>
+                “The team is so welcoming and the menu has a little something for everyone. It is my
+                favorite spot to unwind.”
+              </p>
+            </article>
+          </div>
+          <div class="testimonial-controls"><button type="button" class="testimonial-arrow" id="testimonial-prev" aria-label="Previous testimonial">←</button><div class="testimonial-dots" id="testimonial-dots" aria-label="Choose testimonial"></div><button type="button" class="testimonial-arrow" id="testimonial-next" aria-label="Next testimonial">→</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-spacing" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-info">
+            <p class="eyebrow accent">Contact</p>
+            <h2>Plan your next coffee break with us.</h2>
+            <ul class="contact-list">
+              <li><strong>Location:</strong> 12 Coffee Lane, Downtown, Bengaluru</li>
+              <li><strong>Call:</strong> +91 98765 43210</li>
+              <li><strong>Email:</strong> hello@coderscup.com</li>
+              <li><strong>Hours:</strong> Mon-Sun: 7:00 AM - 11:00 PM</li>
+            </ul>
+
+            <div class="socials" aria-label="Social media links">
+              <a href="#" aria-label="Instagram">Instagram</a>
+              <a href="#" aria-label="Facebook">Facebook</a>
+              <a href="#" aria-label="X">X</a>
+            </div>
+          </div>
+
+          <form class="contact-form" action="#" method="post">
+            <div class="field-group">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" />
+            </div>
+
+            <div class="field-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" />
+            </div>
+
+            <div class="field-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand footer-brand-link" aria-label="Coder's Cup home">
+            <img class="brand-logo footer-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" />
+            <span class="brand-text">
+              <strong>Coder's Cup</strong>
+              <small>Premium Cafe</small>
+            </span>
+          </a>
+          <p>
+            A premium cafe experience built for coffee lovers, creators, and anyone chasing good
+            energy and better moments.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Menu Categories</h3>
+          <ul>
+            <li><a href="#menu">Coffee</a></li>
+            <li><a href="#menu">Tea</a></li>
+            <li><a href="#menu">Desserts</a></li>
+            <li><a href="#menu">Breakfast</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact Info</h3>
+          <ul>
+            <li>12 Coffee Lane</li>
+            <li>+91 98765 43210</li>
+            <li>hello@coderscup.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© <span id="year"></span> Coder's Cup. All rights reserved.</p>
+          <div class="socials footer-socials">
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="X">X</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Review and manage your Coder's Cup cart before checkout."
+    />
+    <title>Coder's Cup | Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="Coder's Cup home">
+          <img class="brand-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" />
+          <span class="brand-text">
+            <strong>Coder's Cup</strong>
+            <small>Premium Cafe</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-ghost">Login</a>
+          <a href="booking.html" class="btn btn-primary">Book a Table</a>
+          <a href="cart.html" class="cart-button" aria-label="Shopping cart">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-count" id="header-cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="cart-hero">
+        <div class="cart-hero-overlay"></div>
+        <div class="container cart-hero-inner">
+          <p class="eyebrow accent">Cart</p>
+          <h1>Your Shopping Cart.</h1>
+          <p>Good food is just a few steps away.</p>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="menu.html">Menu</a>
+            <span>/</span>
+            <span>Cart</span>
+          </nav>
+        </div>
+      </section>
+
+      <section class="cart-content section-spacing">
+        <div class="container cart-layout">
+          <div class="cart-main">
+            <div class="cart-topbar">
+              <h2>Cart Items</h2>
+              <span id="top-cart-count">0 items</span>
+            </div>
+
+            <div id="cart-items" class="cart-items-list"></div>
+
+            <div id="empty-cart" class="empty-cart-panel hidden">
+              <div class="empty-cart-icon">🛒</div>
+              <h3>Your Cart is Empty!</h3>
+              <p>Looks like you haven't added anything to your cart yet.</p>
+              <a href="menu.html" class="btn btn-primary">Explore Menu</a>
+            </div>
+          </div>
+
+          <aside class="order-summary">
+            <h3>Order Summary</h3>
+
+            <div class="coupon-row">
+              <input id="coupon-input" type="text" placeholder="Apply coupon code" />
+              <button id="apply-coupon" type="button" class="btn btn-secondary">Apply</button>
+            </div>
+
+            <div class="summary-list">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="summary-subtotal">₹0</strong>
+              </div>
+              <div class="summary-row">
+                <span>Delivery</span>
+                <strong id="summary-delivery">₹0</strong>
+              </div>
+              <div class="summary-row">
+                <span>GST</span>
+                <strong id="summary-tax">₹0</strong>
+              </div>
+              <div class="summary-row">
+                <span>Discount</span>
+                <strong id="summary-discount">-₹0</strong>
+              </div>
+              <div class="summary-row total-row">
+                <span>Grand Total</span>
+                <strong id="summary-total">₹0</strong>
+              </div>
+            </div>
+
+            <div class="summary-actions">
+              <a href="checkout.html" id="checkout-btn" class="btn btn-primary btn-full">Proceed to Checkout</a>
+              <a href="menu.html" class="btn btn-secondary btn-full">Continue Shopping</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand footer-brand-link" aria-label="Coder's Cup home">
+            <img class="brand-logo footer-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" />
+            <span class="brand-text">
+              <strong>Coder's Cup</strong>
+              <small>Premium Cafe</small>
+            </span>
+          </a>
+          <p>
+            A premium cafe experience built for coffee lovers, creators, and anyone chasing good
+            energy and better moments.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Menu Categories</h3>
+          <ul>
+            <li><a href="menu.html">Coffee</a></li>
+            <li><a href="menu.html">Tea</a></li>
+            <li><a href="menu.html">Desserts</a></li>
+            <li><a href="menu.html">Breakfast</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact Info</h3>
+          <ul>
+            <li>12 Coffee Lane</li>
+            <li>+91 98765 43210</li>
+            <li>hello@coderscup.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© <span id="year"></span> Coder's Cup. All rights reserved.</p>
+          <div class="socials footer-socials">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">X</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

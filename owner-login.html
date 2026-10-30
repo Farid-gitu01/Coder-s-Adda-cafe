@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Owner sign-in for the Coder's Cup cafe dashboard demo." />
+    <title>Coder's Cup | Owner Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="css/owner.css" />
+  </head>
+  <body>
+    <header class="site-header"><div class="container nav-wrap"><a href="index.html" class="brand" aria-label="Coder's Cup home"><img class="brand-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" /><span class="brand-text"><strong>Coder's Cup</strong><small>Premium Cafe</small></span></a><a href="index.html" class="btn btn-secondary">Back to Website</a></div></header>
+    <main class="owner-login-main">
+      <section class="owner-login-card">
+        <img class="auth-logo" src="cafeelogo.png" alt="Coder's Cup Cafe Logo" />
+        <p class="eyebrow accent">Management Portal</p><h1>Owner Login</h1><p class="owner-login-subtitle">Welcome back. Review your cafe operations and performance.</p>
+        <form id="owner-login-form" novalidate>
+          <div class="input-group"><label for="owner-email">Email Address</label><input id="owner-email" type="email" autocomplete="username" placeholder="owner@coderscup.com" /><small class="error-message" data-error-for="owner-email"></small></div>
+          <div class="input-group"><label for="owner-password">Password</label><div class="password-wrap"><input id="owner-password" type="password" autocomplete="current-password" placeholder="Enter your password" /><button id="owner-password-toggle" type="button" class="password-toggle" aria-label="Show password">Show</button></div><small class="error-message" data-error-for="owner-password"></small></div>
+          <label class="owner-remember"><input id="owner-remember" type="checkbox" /><span>Remember Me <small>(demo only)</small></span></label>
+          <p id="owner-login-feedback" class="owner-feedback" role="status" aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+        </form>
+        <div class="owner-demo-credentials"><strong>Demo credentials</strong><span>owner@coderscup.com · Owner1234</span></div>
+        <p class="owner-security-note">Frontend demonstration only. Credentials and role checks in browser code are not secure production authentication.</p>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="footer-bottom"><div class="container footer-bottom-inner"><p>© <span id="owner-year"></span> Coder's Cup. Owner demo portal.</p><a href="index.html">Home</a></div></div></footer>
+    <script src="js/owner-auth.js"></script>
+  </body>
+</html>
